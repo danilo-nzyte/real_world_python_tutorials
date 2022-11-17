@@ -61,7 +61,7 @@ def _generate_bigquery_schema(df: pd.DataFrame) -> List[SchemaField]:
 
 
 def prepare_data(data: List[CharacterSchema]) -> Tuple[str, List[SchemaField]]:
-    df = pd.json_normalize([asdict(x) for x in data], max_level=2)
+    df = pd.json_normalize([asdict(x) for x in data])
     df = transform_dataframe(df)
     schema = _generate_bigquery_schema(df)
     json_records = df.to_json(orient="records", lines=True, date_format="iso")
