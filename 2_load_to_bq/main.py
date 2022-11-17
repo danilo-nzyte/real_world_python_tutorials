@@ -40,16 +40,11 @@ def _generate_bigquery_schema(df: pd.DataFrame) -> List[SchemaField]:
     }
     schema = []
     for column, dtype in df.dtypes.items():
-        if isinstance(df[column].iloc[0], list):
-            mode = "REPEATED"
-        else:
-            mode = "NULLABLE"
+        val = df[column].iloc[0]
+        mode = "REPEATED" if isinstance(val, list) else "NULLABLE"
 
-        if isinstance(df[column].iloc[0], dict) or (
-            isinstance(df[column].iloc[0], list)
-            and isinstance(df[column].iloc[0][0], dict)
-        ):
-            fields = _generate_bigquery_schema(pd.json_normalize(df[column].iloc[0]))
+        if isinstance(val, dict) or (mode == "REPEATED" and isinstance(val[0], dict)):
+            fields = _generate_bigquery_schema(pd.json_normalize(val))
         else:
             fields = ()
 
