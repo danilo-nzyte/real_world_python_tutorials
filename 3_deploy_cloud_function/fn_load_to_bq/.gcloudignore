@@ -1,0 +1,3 @@
+deploy_function.sh
+local_test.sh
+cloud_test.sh
