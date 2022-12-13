@@ -1,4 +1,4 @@
-curl -X POST https://ram-api-request-psmosvfuya-nw.a.run.app \
+curl -X POST <INSERT_API_FUNCTION_URL> \
    -H "Content-Type: application/json" \
    -d '{
         "data" : {

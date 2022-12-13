@@ -1,4 +1,4 @@
-curl -X POST https://load-bq-data-psmosvfuya-nw.a.run.app \
+curl -X POST <INSERT_BQ_FUNCTION_URL> \
    -H "Content-Type: application/json" \
    -d "{
         \"data\" : {
