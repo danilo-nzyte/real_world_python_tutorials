@@ -43,7 +43,7 @@ def send_api_request(request: flask.Request) -> str:
     }
     """
     data = request.get_json().get("data")
-    params = ApiParameters(data.get("api_params"))
+    params = ApiParameters(**data.get("api_params"))
     response = get_endpoint(data.get("endpoint"), params)
     results = get_all_paginated_results(data.get("endpoint"), response.info.pages, params)
     results = [asdict(result) for result in results]
