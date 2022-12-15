@@ -1,4 +1,4 @@
-from typing import List, Tuple, TypedDict
+from typing import List, Tuple
 import io
 
 import pandas as pd
