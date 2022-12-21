@@ -12,7 +12,7 @@ steps:
   - '--runtime'
   - 'python38'
   - '--source'
-  - 'fn_load_to_bq'
+  - '4_continuous_deployment/fn_load_to_bq'
   - '--entry-point'
   - 'create_load_job'
   - '--trigger-http'
