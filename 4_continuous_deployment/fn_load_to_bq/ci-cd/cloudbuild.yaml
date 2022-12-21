@@ -1,0 +1,21 @@
+steps:
+- name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+  entrypoint: gcloud
+  args:
+  - 'alpha'
+  - 'functions'
+  - 'deploy'
+  - 'load-bq-data'
+  - '--gen2'
+  - '--region'
+  - 'europe-west2'
+  - '--runtime'
+  - 'python38'
+  - '--source'
+  - 'fn_load_to_bq'
+  - '--entry-point'
+  - 'create_load_job'
+  - '--trigger-http'
+  - '--max-instances
+  - '5'
+  - '--allow-unauthenticated'
