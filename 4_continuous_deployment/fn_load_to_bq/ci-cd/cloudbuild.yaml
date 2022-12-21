@@ -16,6 +16,6 @@ steps:
   - '--entry-point'
   - 'create_load_job'
   - '--trigger-http'
-  - '--max-instances
+  - '--max-instances'
   - '5'
   - '--allow-unauthenticated'
