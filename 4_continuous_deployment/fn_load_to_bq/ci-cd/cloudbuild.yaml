@@ -18,6 +18,8 @@ steps:
   - '--trigger-http'
   - '--max-instances'
   - '5'
+  - '--service-account'
+  - '${_SERVICE_ACCOUNT}'
   - '--allow-unauthenticated'
 options:
   logging: CLOUD_LOGGING_ONLY
