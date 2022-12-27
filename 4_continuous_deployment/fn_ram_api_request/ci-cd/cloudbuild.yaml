@@ -1,0 +1,25 @@
+steps:
+- name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+  entrypoint: gcloud
+  args:
+  - 'alpha'
+  - 'functions'
+  - 'deploy'
+  - 'ram-api-request'
+  - '--gen2'
+  - '--region'
+  - 'europe-west2'
+  - '--runtime'
+  - 'python38'
+  - '--source'
+  - '4_continuous_deployment/fn_ram_api_request'
+  - '--entry-point'
+  - 'send_api_request'
+  - '--trigger-http'
+  - '--max-instances'
+  - '5'
+  - '--service-account'
+  - '${_SERVICE_ACCOUNT}'
+  - '--allow-unauthenticated'
+options:
+  logging: CLOUD_LOGGING_ONLY
