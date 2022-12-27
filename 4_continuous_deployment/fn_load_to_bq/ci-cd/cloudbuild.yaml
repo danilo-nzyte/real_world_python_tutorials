@@ -21,6 +21,5 @@ steps:
   - '--service-account'
   - '${_SERVICE_ACCOUNT}'
   - '--allow-unauthenticated'
-serviceAccount: 'projects/nzyte-272212/serviceAccounts/real-world-python@nzyte-272212.iam.gserviceaccount.com'
 options:
   logging: CLOUD_LOGGING_ONLY
