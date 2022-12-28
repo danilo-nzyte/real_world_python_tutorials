@@ -32,6 +32,7 @@ def _generate_bigquery_schema(df: pd.DataFrame) -> List[SchemaField]:
             fields = ()
 
 
+
         type = "RECORD" if fields else TYPE_MAPPING.get(dtype.kind)
         schema.append(
             SchemaField(
