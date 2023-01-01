@@ -48,7 +48,6 @@ def create_load_bq_data_task(table: str, results: List[CharacterSchema]):
     headers = {"Content-Type": "application/json"}
 
     response = requests.post(TASK_FUNCTION_URL, data=json.dumps(data, default=_default), headers=headers)
-    print(response.request.body)
     response.raise_for_status()
     return "DONE"
 
