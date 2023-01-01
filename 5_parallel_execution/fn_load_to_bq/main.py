@@ -90,7 +90,7 @@ def create_load_job(request: flask.Request) -> str:
     bigquery_client = bigquery.Client()
     load_config = bigquery.LoadJobConfig(
         schema=schema,
-        write_disposition="WRITE_TRUNCATE",
+        write_disposition="WRITE_APPEND",
         source_format=bigquery.SourceFormat.NEWLINE_DELIMITED_JSON,
     )
     table_id = f"{dataset}.{table}"
