@@ -4,7 +4,7 @@ import requests
 
 
 BASE_URL = "https://rickandmortyapi.com/api"
-CLOUD_TASK_FUNCTION_URL = "https://create-cloud-tasks-psmosvfuya-nw.a.run.app"
+CLOUD_TASK_FUNCTION_URL = "INSERT_FUNCTION_URL"
 
 def get_pages(endpoint: str):
     response = requests.get(url=f"{BASE_URL}/{endpoint}")
@@ -23,11 +23,11 @@ def start_process(pages: int):
         }
     data = {
         "data" : {
-            "project": "nzyte-272212",
-            "region": "europe-west2",
-            "service_account" : "real-world-python@nzyte-272212.iam.gserviceaccount.com",
+            "project": "INSERT_PROJECT",
+            "region": "INSERT_REGION",
+            "service_account" : "INSERT_SERVICE_ACCOUNT",
             "number_of_iterations" : pages,
-            "function_url" : "https://ram-api-request-psmosvfuya-nw.a.run.app",
+            "function_url" : "INSERT_FUNCTION_URL",
             "queue" : "fn-ram-api-request",
             "task_request" : task_request
         }
