@@ -1,0 +1,15 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+prefect = "~=2.7.7"
+requests = "*"
+prefect-gcp = "*"
+gcsfs = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.8"
